@@ -26,6 +26,7 @@ app.use(express.static(__dirname + "/public"));
 app.engine("handlebars", expressHandlebars({
     defaultLayout: "main"
 }));
+
 app.set("view engine", "handlebars");
 
 // Use bodyparser in app

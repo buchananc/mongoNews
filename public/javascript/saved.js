@@ -126,14 +126,14 @@ $(document).ready(function () {
     ////////////////////////////////////////////////
     function handleArticleNotes() {
         var currentArticle = $(this).parents(".panel").data();
-        $.get("/api/notes/" + currentArticle._id).then(function (data) {
+        $.get("/api/notes/" + currentArticle._id).then(function(data) {
             var modalText = [
                 "<div class='container-fluid text-center'>",
                 "<h4>Notes For Article: ",
                 currentArticle._id,
                 "</h4>",
                 "<hr />",
-                "ul class='list-group note-container'>",
+                "<ul class='list-group note-container'>",
                 "</ul>",
                 "<textarea placeholder='New Note' rows='4' cols='60'></textarea>",
                 "<button class='btn btn-success save'>Save Note</button>",
@@ -150,7 +150,7 @@ $(document).ready(function () {
             };
 
             $(".btn.save").data("article", noteData);
-            renderNoteslist(noteData);
+            renderNotesList(noteData);
         });
     }
 
@@ -159,14 +159,14 @@ $(document).ready(function () {
     ////////////////////////////////////////////////
     function handleNoteSave() {
         var noteData;
-        var newNote = $(".bootbox=body textarea").val().trim();
+        var newNote = $(".bootbox-body textarea").val().trim();
 
         if (newNote) {
             noteData = {
                 _id: $(this).data("article")._id,
                 noteText: newNote
             };
-            $.post("/api/notes", noteData).then(function () {
+            $.post("/api/notes", noteData).then(function() {
                 bootbox.hideAll();
             });
         }
@@ -185,9 +185,4 @@ $(document).ready(function () {
             bootbox.hideAll();
         });
     }
-
-
-
-
-
 });

@@ -2,7 +2,7 @@ var scrape = require("../scripts/scrape");
 var makeDate = require("../scripts/date");
 
 // Brind in Headline and Note mongoose models
-var Headline = require("../models/headline");
+var Headline = require("../models/Headline");
 
 module.exports = {
     fetch: function(cb) {

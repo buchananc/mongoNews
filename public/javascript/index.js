@@ -79,8 +79,8 @@ $(document).ready(function () {
     // FUNCTION TRIGGERS WHEN USER WANTS TO SAVE AN ARTICLE
     ////////////////////////////////////////////////
     function handleArticleSave() {
-        var articlesToSave = $(this).parents(".panel").data();
-        articlesToSave.saved = true;
+        var articleToSave = $(this).parents(".panel").data();
+        articleToSave.saved = true;
 
         $.ajax({
             method: "PATCH",

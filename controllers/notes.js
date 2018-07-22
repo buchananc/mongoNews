@@ -1,10 +1,10 @@
-var Note = require("../models/note");
+var Note = require("../models/Note");
 var makeDate = require("../scripts/date");
 
 module.exports = {
     get: function(data, cb) {
         Note.find({
-            _headlineId: data._headlineId
+            _headlineId: data._id
         }, cb);
     },
     save: function(data, cb) {
